@@ -4,40 +4,92 @@
   <meta charset="UTF-8">
   <title>Deposito Cavalli Stalloni - Foggia</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    header, footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #222;
+      color: #fff;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+    .image-box, .text-box {
+      flex: 1;
+    }
+    .image-box img, .image-box iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      object-fit: cover;
+    }
+    footer button {
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      background: #444;
+      color: white;
+    }
+    footer button:hover {
+      background: #666;
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <div class="home">🏠</div>
-    <div class="menu">☰</div>
-  </header>
 
-  <main>
-    <section class="container">
-      <div class="image-box">
-        <img src="img/cavallo.jpg" alt="Cavallo nel Deposito Cavalli Stalloni di Foggia">
-      </div>
-      <div class="text-box">
-        <p>
-          L’Istituto Incremento Ippico di Foggia, conosciuto storicamente come Deposito Cavalli Stalloni,
-          è stato per decenni un punto di riferimento fondamentale per l’allevamento equino in Italia.
-        </p>
-        <p>
-          Nato dopo l’Unità d’Italia, aveva lo scopo di migliorare le razze cavalline attraverso la selezione
-          di stalloni destinati all’agricoltura e agli usi militari.
-        </p>
-        <p>
-          Oggi il complesso rappresenta una testimonianza storica e culturale di grande valore per la città
-          di Foggia e il suo territorio.
-        </p>
-      </div>
-    </section>
-  </main>
+<header>
+  <div class="home" onclick="location.href='index.html'">🏠</div>
+  <div class="menu">☰</div>
+</header>
 
-  <footer>
-    <button>INFO</button>
-    <button>MAP</button>
-    <button>MUSEO</button>
-    <button>3D</button>
-  </footer>
+<main>
+  <section class="container">
+    <div class="image-box" id="imageBox">
+      <img src="img/cavallo.jpg" alt="Cavallo nel Deposito Cavalli Stalloni di Foggia">
+    </div>
+
+    <div class="text-box">
+      <p>
+        L’Istituto Incremento Ippico di Foggia, conosciuto storicamente come Deposito Cavalli Stalloni,
+        è stato per decenni un punto di riferimento fondamentale per l’allevamento equino in Italia.
+      </p>
+      <p>
+        Nato dopo l’Unità d’Italia, aveva lo scopo di migliorare le razze cavalline attraverso la selezione
+        di stalloni destinati all’agricoltura e agli usi militari.
+      </p>
+      <p>
+        Oggi il complesso rappresenta una testimonianza storica e culturale di grande valore per la città
+        di Foggia e il suo territorio.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <button onclick="alert('Sezione informativa')">INFO</button>
+  <button onclick="openMap()">MAP</button>
+  <button onclick="location.href='museo.html'">MUSEO</button>
+  <button onclick="location.href='3D.html'">3D</button>
+</footer>
+
+<script>
+  function openMap() {
+    const box = document.getElementById("imageBox");
+    box.innerHTML = `
+      <iframe 
+        src="https://www.google.com/maps?q=41.4601,15.5588&z=16&output=embed"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    `;
+  }
+</script>
+
 </body>
 </html>
