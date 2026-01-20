@@ -1,276 +1,85 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museo delle Carrozze - Foggia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        /* --- Reset e Variabili --- */
-        :root {
-            --primary-color: #5D4037; /* Marrone cuoio scuro */
-            --accent-color: #D7CCC8; /* Beige chiaro */
-            --bg-color: #FDFBF7; /* Bianco crema/carta antica */
-            --text-color: #3E3E3E;
-            --gold: #C5A059; /* Oro antico */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.8;
-        }
-
-        /* --- Tipografia --- */
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-color);
-        }
-
-        /* --- Header / Hero Section --- */
-        header {
-            /* Sfondo sfumato per simulare un'atmosfera vintage */
-            background: linear-gradient(rgba(44, 28, 20, 0.8), rgba(44, 28, 20, 0.6)), url('https://images.unsplash.com/photo-1590623696898-726416629598?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); 
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
-
-        header h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            border-bottom: 3px solid var(--gold);
-            padding-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.5rem;
-            font-style: italic;
-            font-weight: 300;
-        }
-
-        /* --- Layout Container --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        /* --- Intro Section --- */
-        .intro {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .intro p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #555;
-        }
-
-        /* --- La Collezione --- */
-        .collection-intro {
-            margin-bottom: 40px;
-            border-left: 5px solid var(--gold);
-            padding-left: 20px;
-        }
-
-        /* Grid per le Carrozze */
-        .carriages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(93, 64, 55, 0.15);
-            border-color: var(--gold);
-        }
-
-        .card-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 15px 20px;
-        }
-
-        .card-header h3 {
-            color: white; /* Override del colore h3 */
-            font-size: 1.5rem;
-            margin: 0;
-        }
-
-        .card-body {
-            padding: 25px;
-        }
-
-        .card-body p {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        /* --- Sezione Selleria (Design diverso) --- */
-        .selleria-section {
-            background-color: #2C1C14; /* Molto scuro */
-            color: #EFEBE9;
-            padding: 80px 20px;
-            position: relative;
-        }
-
-        .selleria-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .selleria-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .selleria-text h2 {
-            color: var(--gold);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .selleria-decoration {
-            flex: 1;
-            min-width: 300px;
-            border: 2px solid var(--gold);
-            padding: 20px;
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--gold);
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: white;
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid #ddd;
-            font-size: 0.9rem;
-            color: #888;
-        }
-
-        /* --- Media Queries --- */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .selleria-content { flex-direction: column; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Museo delle Carrozze</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+  </style>
 </head>
-<body>
+<body class="bg-gradient-to-b from-amber-50 to-stone-100 text-stone-800">
 
-    <header>
-        <h1>Il Museo delle Carrozze</h1>
-        <p>Storia, Eleganza e Tradizione Pugliese</p>
-    </header>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b')] bg-cover bg-center opacity-20"></div>
+    <div class="relative max-w-5xl mx-auto px-6 py-24 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">Il Museo delle Carrozze</h1>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto">
+        Un viaggio tra tecnica, eleganza e storia del trasporto nella borghesia foggiana e pugliese.
+      </p>
+    </div>
+  </section>
 
-    <main>
-        
-        <section class="container intro">
-            <p>
-                Il museo non è una semplice esposizione statica, ma una collezione tecnica e storica che mostra l'evoluzione del trasporto e del costume della borghesia foggiana e pugliese.
-            </p>
-        </section>
+  <!-- INTRO -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="bg-white/80 backdrop-blur rounded-2xl shadow-lg p-10">
+      <p class="text-lg leading-relaxed">
+        Il museo non è una semplice esposizione statica, ma una collezione tecnica e storica che mostra
+        l'evoluzione del trasporto e del costume della borghesia foggiana e pugliese.
+      </p>
+    </div>
+  </section>
 
-        <div class="container">
-            <section class="collection-intro">
-                <h2>La Collezione</h2>
-                <p>Il cuore del museo è costituito dalla collezione di carrozze d'epoca (databili tra il XIX e il XX secolo). Molte appartengono alla Regione Puglia, altre provengono da donazioni di famiglie nobiliari locali (come la famiglia Pedone).</p>
-            </section>
+  <!-- COLLEZIONE -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-8 text-center">La Collezione</h2>
 
-            <div class="carriages-grid">
-                
-                <article class="card">
-                    <div class="card-header">
-                        <h3>Il Break Wagonette</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Una carrozza da caccia o da passeggiata in campagna, molto robusta. Simbolo della vita all'aria aperta dell'epoca.</p>
-                    </div>
-                </article>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-2xl shadow-md p-8">
+        <p class="leading-relaxed">
+          Il cuore del museo è costituito dalla collezione di carrozze d'epoca (databili tra il XIX e il XX secolo).
+          Molte appartengono alla Regione Puglia, altre provengono da donazioni di famiglie nobiliari locali
+          (come la famiglia Pedone).
+        </p>
+      </div>
 
-                <article class="card">
-                    <div class="card-header">
-                        <h3>Il Coupé</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Vettura elegante e chiusa, utilizzata per la città e le serate di gala. Progettata per garantire la massima privacy ai passeggeri.</p>
-                    </div>
-                </article>
+      <div class="bg-white rounded-2xl shadow-md p-8">
+        <h3 class="text-2xl font-semibold mb-4">Pezzi più pregiati</h3>
+        <ul class="space-y-4">
+          <li><strong>Break Wagonette:</strong> carrozza da caccia o passeggiata in campagna, molto robusta.</li>
+          <li><strong>Coupé:</strong> vettura elegante e chiusa per città e serate di gala, garantiva privacy.</li>
+          <li><strong>Milord (o Vittoria):</strong> carrozza aperta estiva, simbolo dello struscio elegante.</li>
+          <li><strong>Calesse:</strong> mezzo leggero a due ruote, usato da professionisti per spostamenti rapidi.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-                <article class="card">
-                    <div class="card-header">
-                        <h3>Il Milord</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Conosciuta anche come <em>Vittoria</em>. Carrozza aperta ed estiva, vero simbolo dello "struscio" elegante della nobiltà.</p>
-                    </div>
-                </article>
+  <!-- SELLERIA -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="bg-gradient-to-br from-amber-100 to-amber-50 rounded-2xl shadow-xl p-10">
+      <h2 class="text-3xl font-bold mb-6">La Sala dei Finimenti (Selleria)</h2>
+      <p class="leading-relaxed text-lg">
+        Accanto alle carrozze c'è una selleria storica che conserva finimenti, selle militari e civili,
+        frustini e accessori di alta artigianeria, mantenuti con cura maniacale. L'odore del cuoio antico
+        è una delle caratteristiche sensoriali più suggestive della visita.
+      </p>
+    </div>
+  </section>
 
-                <article class="card">
-                    <div class="card-header">
-                        <h3>Il Calesse</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Il tipico mezzo leggero a due ruote, diffusissimo tra i professionisti (medici, fattari) dell'epoca per muoversi velocemente tra le masserie.</p>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-
-        <section class="selleria-section" id="selleria">
-            <div class="selleria-content">
-                <div class="selleria-text">
-                    <h2>La Sala dei Finimenti</h2>
-                    <p>Accanto alle carrozze c'è una selleria storica che conserva finimenti, selle militari e civili, frustini e accessori di alta artigianeria, mantenuti con cura maniacale.</p>
-                </div>
-                <div class="selleria-decoration">
-                    <p>"L'odore del cuoio antico è una delle caratteristiche sensoriali di questa visita."</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Museo delle Carrozze - Foggia, Puglia. Tutti i diritti riservati.</p>
-    </footer>
+  <!-- FOOTER -->
+  <footer class="bg-stone-900 text-stone-200 py-10">
+    <div class="max-w-5xl mx-auto px-6 text-center space-y-3">
+      <p class="text-lg font-semibold">Museo delle Carrozze</p>
+      <p class="text-sm text-stone-400">Storia, eleganza e tradizione del trasporto pugliese</p>
+    </div>
+  </footer>
 
 </body>
 </html>
