@@ -1,85 +1,179 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Museo delle Carrozze</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Museo delle Carrozze - Foggia</title>
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    header, footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 18px;
+      background: #222;
+      color: #fff;
+    }
+
+    header div {
+      cursor: pointer;
+      font-size: 22px;
+    }
+
+    main {
+      padding: 20px 14px 70px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      background: white;
+      padding: 26px;
+      border-radius: 14px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+      font-size: 15px;
+    }
+
+    footer {
+      position: sticky;
+      bottom: 0;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    footer button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #444;
+      color: white;
+      font-size: 13px;
+      transition: 0.2s;
+    }
+
+    footer button:hover {
+      background: #666;
+      transform: scale(1.05);
+    }
+
+    /* Tablet e mobile */
+    @media (max-width: 768px) {
+      .container {
+        padding: 18px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+    }
+
+    /* Telefoni piccoli */
+    @media (max-width: 480px) {
+      p, li {
+        font-size: 14px;
+      }
+
+      footer button {
+        flex: 1 1 45%;
+      }
+    }
   </style>
 </head>
-<body class="bg-gradient-to-b from-amber-50 to-stone-100 text-stone-800">
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b')] bg-cover bg-center opacity-20"></div>
-    <div class="relative max-w-5xl mx-auto px-6 py-24 text-center">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6">Il Museo delle Carrozze</h1>
-      <p class="text-lg md:text-xl max-w-3xl mx-auto">
-        Un viaggio tra tecnica, eleganza e storia del trasporto nella borghesia foggiana e pugliese.
-      </p>
-    </div>
+<body>
+
+<header>
+  <div onclick="location.href='index.html'">🏠</div>
+  <div>☰</div>
+</header>
+
+<main>
+  <section class="container">
+
+    <h1>Il Museo delle Carrozze</h1>
+
+    <p>
+      Il museo non è una semplice esposizione statica, ma una collezione tecnica e storica che mostra
+      l'evoluzione del trasporto e del costume della borghesia foggiana e pugliese.
+    </p>
+
+    <h2>La Collezione</h2>
+
+    <p>
+      Il cuore del museo è costituito dalla collezione di carrozze d'epoca (databili tra il XIX e il XX secolo).
+      Molte appartengono alla Regione Puglia, altre provengono da donazioni di famiglie nobiliari locali
+      (come la famiglia Pedone).
+    </p>
+
+    <p>Tra i pezzi più pregiati si possono ammirare:</p>
+
+    <ul>
+      <li><strong>Break Wagonette:</strong> carrozza da caccia o da passeggiata in campagna, molto robusta.</li>
+      <li><strong>Coupé:</strong> vettura elegante e chiusa, usata in città e per le serate di gala, che garantiva privacy ai passeggeri.</li>
+      <li><strong>Milord (o Vittoria):</strong> carrozza aperta estiva, simbolo dello “struscio” elegante della nobiltà.</li>
+      <li><strong>Calesse:</strong> mezzo leggero a due ruote, diffusissimo tra medici e fattari per spostarsi rapidamente tra le masserie.</li>
+    </ul>
+
+    <h2>La Sala dei Finimenti (Selleria)</h2>
+
+    <p>
+      Accanto alle carrozze si trova una selleria storica che conserva finimenti, selle militari e civili,
+      frustini e accessori di alta artigianeria, mantenuti con cura maniacale.
+    </p>
+
+    <p>
+      L’odore del cuoio antico è una delle caratteristiche sensoriali più forti e suggestive di questa visita.
+    </p>
+
   </section>
+</main>
 
-  <!-- INTRO -->
-  <section class="max-w-5xl mx-auto px-6 py-16">
-    <div class="bg-white/80 backdrop-blur rounded-2xl shadow-lg p-10">
-      <p class="text-lg leading-relaxed">
-        Il museo non è una semplice esposizione statica, ma una collezione tecnica e storica che mostra
-        l'evoluzione del trasporto e del costume della borghesia foggiana e pugliese.
-      </p>
-    </div>
-  </section>
-
-  <!-- COLLEZIONE -->
-  <section class="max-w-6xl mx-auto px-6 py-12">
-    <h2 class="text-3xl font-bold mb-8 text-center">La Collezione</h2>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white rounded-2xl shadow-md p-8">
-        <p class="leading-relaxed">
-          Il cuore del museo è costituito dalla collezione di carrozze d'epoca (databili tra il XIX e il XX secolo).
-          Molte appartengono alla Regione Puglia, altre provengono da donazioni di famiglie nobiliari locali
-          (come la famiglia Pedone).
-        </p>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-md p-8">
-        <h3 class="text-2xl font-semibold mb-4">Pezzi più pregiati</h3>
-        <ul class="space-y-4">
-          <li><strong>Break Wagonette:</strong> carrozza da caccia o passeggiata in campagna, molto robusta.</li>
-          <li><strong>Coupé:</strong> vettura elegante e chiusa per città e serate di gala, garantiva privacy.</li>
-          <li><strong>Milord (o Vittoria):</strong> carrozza aperta estiva, simbolo dello struscio elegante.</li>
-          <li><strong>Calesse:</strong> mezzo leggero a due ruote, usato da professionisti per spostamenti rapidi.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- SELLERIA -->
-  <section class="max-w-5xl mx-auto px-6 py-16">
-    <div class="bg-gradient-to-br from-amber-100 to-amber-50 rounded-2xl shadow-xl p-10">
-      <h2 class="text-3xl font-bold mb-6">La Sala dei Finimenti (Selleria)</h2>
-      <p class="leading-relaxed text-lg">
-        Accanto alle carrozze c'è una selleria storica che conserva finimenti, selle militari e civili,
-        frustini e accessori di alta artigianeria, mantenuti con cura maniacale. L'odore del cuoio antico
-        è una delle caratteristiche sensoriali più suggestive della visita.
-      </p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-stone-900 text-stone-200 py-10">
-    <div class="max-w-5xl mx-auto px-6 text-center space-y-3">
-      <p class="text-lg font-semibold">Museo delle Carrozze</p>
-      <p class="text-sm text-stone-400">Storia, eleganza e tradizione del trasporto pugliese</p>
-    </div>
-  </footer>
+<footer>
+  <button onclick="location.href='index.html'">HOME</button>
+  <button onclick="location.href='museo.html'">MUSEO</button>
+  <button onclick="location.href='3D.html'">3D</button>
+</footer>
 
 </body>
 </html>
