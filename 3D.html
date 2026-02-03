@@ -1,5 +1,78 @@
-<a href="3d_model.html">
-    <button style="padding: 15px 30px; background-color: #1CAAD9; color: white; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">
-        Visualizza 3D
-    </button>
-</a>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sito con Modello 3D</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background-color: #1CAAD9;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #158ca0;
+        }
+
+        .sketchfab-embed-wrapper {
+            max-width: 100%;
+            margin: 20px auto;
+            text-align: center;
+            display: none;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        p {
+            font-size: 13px;
+            color: #4A4A4A;
+        }
+
+        a {
+            font-weight: bold;
+            color: #1CAAD9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Benvenuto nel sito</h1>
+    <p>Per visualizzare il modello 3D, clicca sul pulsante qui sotto.</p>
+
+    <!-- Pulsante che attiva la visualizzazione del modello 3D -->
+    <button class="btn" onclick="visualizza3D()">Visualizza Modello 3D</button>
+
+    <!-- Div che contiene il modello 3D (inizialmente nascosto) -->
+    <div class="sketchfab-embed-wrapper" id="model3d">
+        <iframe title="Carrozza - Cavalli Stalloni Foggia" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b04be8cada3b4bb0a1170d34dd5ef8a1/embed"></iframe>
+        <p>
+            <a href="https://sketchfab.com/3d-models/carrozza-cavalli-stalloni-foggia-b04be8cada3b4bb0a1170d34dd5ef8a1?utm_medium=embed&utm_campaign=share-popup&utm_content=b04be8cada3b4bb0a1170d34dd5ef8a1" target="_blank" rel="nofollow">Carrozza - Cavalli Stalloni Foggia</a> by 
+            <a href="https://sketchfab.com/Peppegiochi871?utm_medium=embed&utm_campaign=share-popup&utm_content=b04be8cada3b4bb0a1170d34dd5ef8a1" target="_blank" rel="nofollow">Giuseppe Ferrazzano</a> on 
+            <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=b04be8cada3b4bb0a1170d34dd5ef8a1" target="_blank" rel="nofollow">Sketchfab</a>
+        </p>
+    </div>
+
+    <script>
+        function visualizza3D() {
+            // Mostra il modello 3D
+            document.getElementById("model3d").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
